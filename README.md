@@ -20,10 +20,10 @@ $$
 \theta^* := \arg \min_\theta D(P(X) \| P_\theta(X)),
 $$
 
-where $D$ is the KL-divergence and $P_\theta(X) = \int_z P_\theta(X, Z=z) dz$ is the marginal distribution over $X$. Using the definition of the KL-divergence, we can see that this is equivalent to maximizing the log-likelihood of the data, in the sense that 
+where $D$ is the KL-divergence and $P_\theta(X) = \int_z P_\theta(X, Z=z) dz$ is the marginal distribution over $X$. Using the definition of the KL-divergence and the law of large numbers, we can see that, for large enough datasets, we can find a good estimate of $\theta^*$ by maximizing the log-likelihood of the data, in the sense that 
 
 $$
-\theta^* = \arg \max_\theta \sum_{i=1}^N log P_\theta(X_i = x_i),
+\theta^* = \lim_{N \to \infty} \arg \max_\theta \sum_{i=1}^N log P_\theta(X_i = x_i),
 $$
 
 where $X_i$ denotes the random variable corresponding to the sampling event of the $i$th data point.
